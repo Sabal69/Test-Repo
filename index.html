@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabal Shahi</title>
+  <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @font-face {
+    font-family: "MyFont";
+    src: url("fonts/Kids Sketchy Demo.ttf") format("truetype");
+    }
+
+    body {
+        font-family: "MyFont", sans-serif;
+    }
+
+
+    .identity {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(3rem, 15vw, 8rem);
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .identity1 {
+      position: absolute;
+      top: 29%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      font-size: clamp(0.8rem, 8vw, 2rem);
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .description {
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      font-size: clamp(0.8rem, 8vw, 2rem);
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .description1 {
+      position: absolute;
+      top: 41%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      font-size: clamp(0.8rem, 8vw, 2rem);
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .sticker {
+      position: absolute;
+      top: 10%;
+      left: 6%;
+      width: clamp(70px, 8vw, 10px);
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .sticker:hover {
+      transform: rotate(10deg);
+    }
+
+    .sticker1 {
+      position: absolute;
+      top: 8.3%;
+      right: 5%;
+      width: clamp(100px, 15vw, 200px);
+      height: auto;
+    }
+
+    .sticker2 {
+      position: absolute;
+      top: 25%;
+      left: 6%;
+      width: clamp(100px, 8vw, 10px);
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .sticker2:hover {
+      transform: rotate(10deg);
+    }
+
+    .sticker3 {
+      position: absolute;
+      top: 13%;
+      left: 33%;
+      width: clamp(50px, 8vw, 10px);
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .sticker3:hover {
+      transform: rotate(10deg);
+    }
+
+    .sticker4 {
+      position: absolute;
+      top: 13%;
+      left: 37%;
+      width: clamp(20px, 8vw, 10px);
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .sticker4:hover {
+      transform: rotate(10deg);
+    }
+
+    .sticker5 {
+      position: absolute;
+      top: 13%;
+      left: 20%;
+      width: clamp(60px, 8vw, 10px);
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .sticker5:hover {
+      transform: rotate(10deg);
+    }
+
+    .sticker6 {
+      position: absolute;
+      top: 8.3%;
+      right: 25%;
+      width: clamp(30px, 15vw, 50px);
+      height: auto;
+    }
+
+    .sticker6:hover {
+      transform: rotate(10deg);
+    }
+
+    .sticker7 {
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      width: clamp(100px, 15vw, 100px);
+      height: auto;
+    }
+
+    .sticker7:hover {
+      transform: rotate(10deg);
+    }
+
+    .projects {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(0.8rem, 8vw, 2rem);
+      color: #333;
+      text-align: center;
+      width: 90%;
+    }
+
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #f1f1f1;
+      padding: 0.5rem;
+      border-radius: 20px;
+      border: 2px solid black;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: rotate(3deg) translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+    }
+
+    .card h4 {
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin: 0;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .projects {
+        top: 70%;
+        width: 95%;
+      }
+      .project-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects {
+        top: 60%;
+        width: 98%;
+      }
+      .project-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+      .card h4 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sticker {
+        width: clamp(70px, 25vw, 10px);
+        top: 8%;
+        left: 9%;
+      }
+      .sticker1 {
+        width: clamp(80px, 20vw, 150px);
+        top: 8%;
+      }
+      .sticker2 {
+        width: clamp(80px, 20vw, 10px);
+        top: 23%;
+        left: 9%;
+      }
+      .sticker3 {
+        width: clamp(40px, 15vw, 10px);
+        top: 11%;
+        left: 30%;
+      }
+      .sticker4 {
+        width: clamp(20px, 15vw, 10px);
+        top: 11%;
+        left: 38%;
+      }
+      .identity {
+        top: 20%;
+        font-size: clamp(6rem, 10vw, 10rem);
+      }
+      .identity1 {
+        top: 29%;
+        font-size: clamp(0.7rem, 12vw, 2rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sticker {
+        width: clamp(40px, 30vw, 10px);
+        top: 15%;
+        left: 12%;
+      }
+      .sticker1 {
+        width: clamp(60px, 25vw, 100px);
+        top: 5%;
+        right: 2%;
+      }
+      .sticker2 {
+        width: clamp(60px, 30vw, 10px);
+        top: 24%;
+        left: 12%;
+      }
+      .sticker3 {
+        width: clamp(25px, 12vw, 40px);
+        top: 8%;
+        left: 25%;
+      }
+      .sticker4 {
+        width: clamp(20px, 12vw, 10px);
+        top: 8%;
+        left: 34%;
+      }
+      .identity {
+        top: 20%;
+        padding: 0 1rem;
+      }
+      .identity1 {
+        top: 28.5%;
+        padding: 0 1rem;
+      }
+    }
+
+
+    .navbar {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: clamp(1rem, 3vw, 2rem);
+      
+      font-size: clamp(1.5rem, 4vw, 30px);
+    }
+
+    .navbar a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+
+    .navbar a:hover {
+      transform: rotate(5deg);
+    }
+
+
+    @media (max-width: 768px) {
+      .navbar {
+        gap: clamp(0.5rem, 2vw, 1rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .navbar a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      background: #f1f1f1;
+      background-image: linear-gradient(
+          90deg,
+          transparent 50px,
+          #ffb4b8 50px,
+          #ffb4b8 52px,
+          transparent 52px
+        ),
+        linear-gradient(#e1e1e1 0.1em, transparent 0.1em);
+      background-size: 100% 30px;
+    }
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#project">Project</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="identity">Sabal Shahi</div>
+  <div class="identity1">UI/UX Designer</div>
+  <div class="description">Hi, I’m a UI/UX designer focused on creating simple, intuitive, and meaningful digital experiences.</div>
+  <div class="description1"> I blend clarity, creativity, and purposeful design to turn ideas into functional, visually engaging products.</div>
+  <img class="sticker" src="\image\Asset 2.png" alt="Watch Image">
+  <img class="sticker1" src="\image\Asset 5.png" alt="Flower Image">
+  <img class="sticker2" src="\image\Asset 3.png" alt="Flower Image">
+  <img class="sticker3" src="\image\Asset 6.png" alt="Flower Image">
+  <img class="sticker4" src="\image\Asset 7.png" alt="Flower Image">
+  <img class="sticker5" src="\image\Asset 8.png" alt="Flower Image">
+  <img class="sticker6" src="\image\Asset 9.png" alt="Flower Image">
+  <img class="sticker7" src="\image\Asset 10.png" alt="Flower Image">
+
+  <div class="projects">
+    <h3>Projects</h3>
+    <div class="project-cards">
+      <div class="card">
+        <img src="\image\Pariksha.png" alt="Project 1">
+        <h4>Project 1</h4>
+        <p>Description of project 1</p>
+      </div>
+      <div class="card">
+        <img src="\image\Pariksha.png" alt="Project 2">
+        <h4>Project 2</h4>
+        <p>Description of project 2</p>
+      </div>
+      <div class="card">
+        <img src="\image\Pariksha.png" alt="Project 3">
+        <h4>Project 3</h4>
+        <p>Description of project 3</p>
+      </div>
+      <div class="card">
+        <img src="\image\Pariksha.png" alt="Project 4">
+        <h4>Project 4</h4>
+        <p>Description of project 4</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  </div>
+
+</body>
+</html>
